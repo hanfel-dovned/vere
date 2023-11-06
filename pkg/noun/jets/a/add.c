@@ -6,10 +6,30 @@
 
 #include "noun.h"
 
+u3_noun ca_combine(u3_noun a)
+{
+   u3k(a);
+
+   u3_noun foo = 98;
+   u3_noun bar = 99;
+
+   u3_noun x = u3nc(foo, a);
+   u3_noun y = u3nc(bar, a);
+
+   u3_noun z = u3nc(x, y);
+
+   return z;
+}
+
 u3_noun
 u3qa_add(u3_atom a,
          u3_atom b)
 {
+  u3_noun n = 1;
+  u3_noun z = ca_combine(n);
+  u3m_p("Printing the noun: ", z);
+  u3z(z);
+
   if ( _(u3a_is_cat(a)) && _(u3a_is_cat(b)) ) {
     c3_w c = a + b;
 
